@@ -44,7 +44,7 @@ ________________
 
 # Authentication and production
 
-### PR for this file: https://github.com/kimmyd70/drf-api-permissions-postgres/pull/3
+### PR for this file: https://github.com/kimmyd70/drf-api-permissions-postgres/pull/4
 
 This is Lab 33 of 401-Python (seattle-py-401n2)
 
