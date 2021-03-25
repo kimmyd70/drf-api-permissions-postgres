@@ -1,17 +1,17 @@
 from rest_framework import generics
-# from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Woman
-# from .permissions import IsAuthorOrReadOnly
+from women.permissions import IsOwnerOrReadOnly
 from .serializers import WomanSerializer
 
 
 class WomanList(generics.ListCreateAPIView):
-    # permission_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     queryset = Woman.objects.all()
     serializer_class = WomanSerializer
 
 
 class WomanDetail(generics.RetrieveDestroyAPIView):
-    # permission_classes = (IsAuthorOrReadOnly,)
+    permission_classes = (IsOwnerOrReadOnly,)
     queryset = Woman.objects.all()
     serializer_class = WomanSerializer
