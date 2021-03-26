@@ -80,6 +80,7 @@ __________________
 
 2. Adjust docker-compose.yml so that data is persisted in a volume outside of container.
     - These steps are different depending on whether SQLite or PostgreSQL is being used.
+    - *** Use [this article](https://medium.com/analytics-vidhya/getting-started-with-postgresql-using-docker-compose-34d6b808c47c)
 
 ________________
 
