@@ -1,4 +1,5 @@
 (Lab #33 update at bottom)
+(Lab #34 update at bottom)
 
 # Permissions and POSTGRESQL
 
@@ -87,6 +88,67 @@ ________________
 ### Server and Client
 
 - Server: running on local server
+- Client: Django/Docker
+
+____________________
+
+### Testing
+
+- Include steps to manually test using httpie or Postman
+
+- No Unit testing required
+
+________________
+
+> As allowed by Roger in class:  I chose to extend this project on a different branch vs create from scratch
+
+___________________
+
+# Deployment (to Heroku)
+
+### PR for this file: https://github.com/kimmyd70/drf-api-permissions-postgres/pull/5
+
+This is Lab 34 of 401-Python (seattle-py-401n2)
+
+Developers: Kim Damalas
+
+Date: 28 March 2021
+____________________
+
+### Features - .env
+1. NOTE: You can use previous lab’s Application as a starting point or start from scratch.
+
+2. Modify your application to store SECRET_KEY, ALLOWED_HOSTS, DEBUG and DATABASE information in .env file.
+
+3. All the code changes will be in settings.py so check the demo code for Env related lines.
+
+4. Include .env values in your Canvas submission
+
+### Features - Deployment
+1. Research web hosting sites capable of working with Docker
+
+2. NOTE no money is required for this lab but you may choose to create a trial account.
+__________________
+
+### Storage Options
+
+1. You are not required to use Poetry since the requirements.txt is being supplied.
+
+2. However if you run into issues with supplied requirements.txt then you are responsible for rebuilding.
+
+3. You are NOT required to use Database from an external source, but it’s nice if you do.
+
+4. You ARE required to have Database settings read from environment variables.
+
+
+    - These steps are different depending on whether SQLite or PostgreSQL is being used.
+    - *** Use [this article](https://medium.com/analytics-vidhya/getting-started-with-postgresql-using-docker-compose-34d6b808c47c)
+
+________________
+
+### Server and Client
+
+- Server: deployed to Heroku
 - Client: Django/Docker
 
 ____________________
