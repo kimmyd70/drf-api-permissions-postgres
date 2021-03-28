@@ -128,6 +128,15 @@ ____________________
 1. Research web hosting sites capable of working with Docker
 
 2. NOTE no money is required for this lab but you may choose to create a trial account.
+
+### Other
+1. Add CORS headers using django-cors-headers
+
+2. Whitelist allowed origins
+
+3. Handling collecting static files so that browsable API renders nicely.
+
+4. Host database in a location other than where Django site is hosted.(see below)
 __________________
 
 ### Storage Options
