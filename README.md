@@ -1,7 +1,6 @@
+(Lab #33 update at bottom)
 
 # Permissions and POSTGRESQL
-
-
 
 ### PR for this file: https://github.com/kimmyd70/drf-api-permissions-postgres/pull/3
 
@@ -41,3 +40,63 @@ ____________________
 
 Unit testing as applicable
 
+________________
+
+# Authentication and production
+
+### PR for this file: https://github.com/kimmyd70/drf-api-permissions-postgres/pull/4
+
+This is Lab 33 of 401-Python (seattle-py-401n2)
+
+Developers: Kim Damalas
+
+Date: 25 March 2021
+____________________
+
+### Features - Django REST Framework
+1. Add JWT Authentication to your API.
+
+    - Install needed libraries in project configuration and/or site settings.
+2. Keep any pre-existing authentication so DRF Browsable API still usable.
+
+    - Install needed libraries in project configuration and/or site settings.
+
+
+### Features - Docker
+1. Create a boilerplate Dockerfile and docker-compose.yml so you don’t need to start from scratch each time.
+
+    - E.g. as a VS Code snippet, or a gist.
+2. Switch to using Gunicorn instead of Django’s built in development server.
+
+    - mind the number of workers to avoid sluggishness
+3. Warning You will run into styling issues when you switch over to Gunicorn.
+
+    - On Django side you’ll need to properly handle static files using Whitenoise
+__________________
+
+### Storage Options
+
+1. Your choice of SQLite or PostgreSQL (I chose postgres)
+
+2. Adjust docker-compose.yml so that data is persisted in a volume outside of container.
+    - These steps are different depending on whether SQLite or PostgreSQL is being used.
+    - *** Use [this article](https://medium.com/analytics-vidhya/getting-started-with-postgresql-using-docker-compose-34d6b808c47c)
+
+________________
+
+### Server and Client
+
+- Server: running on local server
+- Client: Django/Docker
+
+____________________
+
+### Testing
+
+- Include steps to manually test using httpie or Postman
+
+- No Unit testing required
+
+________________
+
+> As allowed by Roger in class:  I chose to extend this project on a different branch vs create from scratch
