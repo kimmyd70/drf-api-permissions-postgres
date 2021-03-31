@@ -12,6 +12,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+
+# read env file
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +29,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2ed6yydj9yrxejrqyq^n7t=0i63a^2h2un)5o4qjo1+n34eqkz'
+SECRET_KEY = env.str('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env.bool('DEBUG')
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1','localhost']
+ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS'),)
 
 
 # Application definition
@@ -39,10 +47,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'women'
+    'women',
+    # 'corsheaders',   
 ]
 
 MIDDLEWARE = [
+    # 'corsheaders.middleware.CorsMiddleware'
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -80,20 +90,13 @@ WSGI_APPLICATION = 'women_in_stem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
+        'HOST': env('DATABASE_HOST'),
+        'PORT': env('DATABASE_PORT'),
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 
 
@@ -147,3 +150,14 @@ REST_FRAMEWORK = {
         # 'rest_framework.authentication.BasicAuthentication',
     ],
 }
+
+# CORS_ALLOW_ALL_ORIGINS = env.bool('ALLOW_ALL_ORIGINS')
+
+# CORS_ORIGIN_ALLOW_ALL = False
+
+# CORS_ALLOWED_ORIGINS = [
+# 'http://localhost:3000',
+# ]
+
+# CORS_ORIGIN_WHITELIST=tuple(env.list('ALLOWED_ORIGINS'))
+# CORS_ALLOW_ALL_ORIGINS = True
