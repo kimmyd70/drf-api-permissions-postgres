@@ -40,7 +40,6 @@ ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS'),)
 # Application definition
 
 INSTALLED_APPS = [
-    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -49,10 +48,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'women',
-    
+    'corsheaders',   
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware'
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -150,3 +150,14 @@ REST_FRAMEWORK = {
         # 'rest_framework.authentication.BasicAuthentication',
     ],
 }
+
+# CORS_ALLOW_ALL_ORIGINS = env.bool('ALLOW_ALL_ORIGINS')
+
+# CORS_ORIGIN_ALLOW_ALL = False
+
+# CORS_ALLOWED_ORIGINS = [
+# 'http://localhost:3000',
+# ]
+
+# CORS_ORIGIN_WHITELIST=tuple(env.list('ALLOWED_ORIGINS'))
+CORS_ALLOW_ALL_ORIGINS = True
