@@ -10,14 +10,14 @@ services:
       - "8000:8000"
 
 
-  db:
-    image: postgres:11
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-    volumes:
-      - db-data:/var/lib/postgresql/data
+  # db:
+  #   image: postgres:11
+  #   environment:
+  #     - POSTGRES_DB=postgres
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
+  #   volumes:
+  #     - db-data:/var/lib/postgresql/data
     # ports:
     #   - 5432:5432
   
